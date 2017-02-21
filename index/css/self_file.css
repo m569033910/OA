@@ -1,0 +1,29 @@
+table{
+	width:500px;
+	height:200px;
+	margin:50px auto;
+	padding:0;
+	border:1px solid #ccc;
+	border-collapse:collapse;
+}
+table tr{
+	border:1px solid #fff;
+	width:300px;
+	height:20px;
+}
+table tr td{
+	text-align:center;
+	margin:0;
+	padding:0;
+	border:1px solid #ccc;
+	width:100px;
+	height:30px;
+}
+table a{
+	text-decoration:none;
+}
+#page{
+	text-align:center;
+	width:150px;
+	margin:50px auto;
+}

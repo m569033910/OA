@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link  rel='stylesheet' type='text/css' href='../css/select_msg.css'/>
+<body>
+<div id='select_message_div'>
+	<table>
+		<form id='select_message'>
+		<th colspan='5'>草稿箱</th>
+		<tr>
+			<td><strong>标题</strong></td>
+			<td><strong>收件人</strong></td>
+			<td><strong>保存时间</strong></td>
+			<td><strong>操作</strong></td>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				<td><a href='#'></a>招聘</td>
+				<td>王维</td>
+				<td>30天</td>
+				<td><a href="{:U('Message/msg_delete',array('id'=>$data['msg_id']))}">删除</a> || <a href="{:U('Message/select_msg_unsend_details',array('id'=>$data['msg_id']))}">详情</a></td>
+			</tr>
+		</volist>
+		</form>
+	</table>
+	</div>
+
+	
+</body>
+</html>

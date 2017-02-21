@@ -1,0 +1,42 @@
+body{
+	background:#006FAC;
+}
+ul{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+#div{
+	
+	background:#006FAC;
+	
+}
+ul li{
+	height:30px;
+	line-height:30px;
+}
+ul li a{
+	text-decoration:none;
+	color:#ccc;
+}
+ul .title{
+	text-align:center;
+	width:183px;
+	height:50px;
+	line-height:50px;
+	background:#006FAC;
+	color:#fff;
+}
+ul .content{
+	background:#006FAC;
+	text-align:center;
+	font-weight:bold;
+}
+ul .title:hover{
+	cursor:pointer;
+	background:#007FDC;
+
+}
+ul .content:hover{
+	cursor:pointer;
+}

@@ -1,0 +1,50 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='__PUBLIC__/js/jquery.js'></script>
+	<script type='text/javascript' src='__PUBLIC__/js/jquery.validate.js'></script>
+	<script>var login_url="{:U('Staff/login')}";</script>
+	<script type='text/javascript' src='__PUBLIC__/js/index.js'></script>
+	<link rel='stylesheet' href='__PUBLIC__/css/index.css' type='text/css'/>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" scroll="no">
+ <form action="{:U('Index/main')}" method='post' id='login_form'>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+    <td height="100%" align="center" bgcolor="#e3efff">
+    <table width="762" height="435" border="0" cellpadding="0" cellspacing="0" background="__PUBLIC__/images/loginBg.png">
+      <tr>
+        <td><table border="0" align="center" cellpadding="0" cellspacing="7">
+       
+          <tr>
+            <td>用户名：</td>
+            <td><input name="staff_username" id='staff_username' type="text"  style="width:160px;hight:20px"></td>
+            </tr>
+          <tr>
+            <td>密　码：</td>
+            <td><input name="staff_password" id='staff_password' type="text"  style="width:160px;hight:20px"></td>
+            </tr>
+            <tr>
+            <td colspan='2'><input type="radio" id="radio1" name="radio" value='staff'><label for="radio1">普通职员</label><input type="radio" id="radio2" name="radio" value='leader'><label for="radio2">领导</label><input type="radio" id="radio3" name="radio" value='admin'><label for="radio3">管理员</label></td>
+            </tr>
+          <tr>
+            <td height="100" colspan="2" valign="top"><table border="0" align="center" cellpadding="0" cellspacing="5">
+              <tr>
+                <td align="center"><BUTTON style="HEIGHT:25px"><img src="__PUBLIC__/images/login_enter.gif" width="16" height="16" align="absmiddle"> 登录</BUTTON></td>
+                <td align="center"><BUTTON style="HEIGHT:25px"><img src="__PUBLIC__/images/login_cancel.gif" width="16" height="16" align="absmiddle"> 重置</BUTTON></td>
+                </tr>
+            
+            </table></td>
+            </tr>
+          </table></td>
+        </tr>
+    </table></td>
+  </tr>
+  
+</table>
+</form>
+</body>
+</html>

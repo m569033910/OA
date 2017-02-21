@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link type='text/css' href='../css/staff_other_msg.css' rel='stylesheet'/>
+</head>
+<body>
+	
+
+	<table>
+	<th colspan='3'>部门信息</th>	
+	<volist name='data' id='info'>
+	<tr>
+	<td><strong>部门编号</strong></td>	
+	<td><strong>部门名称</strong></td>	
+	<td><strong>操作</strong></td>	
+	</tr>
+	<tr>
+	<td>101</td>
+	<td>人事部</td>
+	<td><a href="{:U('Admin/dept_details',array('id'=>$info['dept_id']))}">详情 | </a><a href="{:U('Admin/dept_delete',array('id'=>$info['dept_id']))}">删除</a></td>
+	</tr>
+	<tr>
+	<td>102</td>
+	<td>财务部</td>
+	<td><a href="{:U('Admin/dept_details',array('id'=>$info['dept_id']))}">详情 | </a><a href="{:U('Admin/dept_delete',array('id'=>$info['dept_id']))}">删除</a></td>
+	</tr>
+	<tr>
+	<td>103</td>
+	<td>销售部</td>
+	<td><a href="{:U('Admin/dept_details',array('id'=>$info['dept_id']))}">详情 | </a><a href="{:U('Admin/dept_delete',array('id'=>$info['dept_id']))}">删除</a></td>
+	</tr>
+	</volist>
+	<tr><td colspan='3'><input id='create' type="button" value="新建部门"></td></tr>
+	</table>
+
+	
+</body>
+</html>

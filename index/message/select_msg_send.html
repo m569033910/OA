@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/select_address.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+<link  rel='stylesheet' type='text/css' href='../css/select_msg.css'/>
+<body>
+
+	<div id='select'>
+		<form id='select_form' method='post' action="{:U('Message/select_msg_send')}">
+			查询条件:<input type="radio" id="radio1" name="radio" value='msg_title'><label for="radio1">标题</label><input type="radio" id="radio2" name="radio" value='staff_name'><label for="radio2">收件人姓名</label>
+
+			具体查询条件：<input type="text" name='condion'><button id='select_button'>查询</button>
+
+		</form>
+	</div>
+
+<div id='select_message_div'>
+	<table>
+		<form id='select_message'>
+		<th colspan='5'>已发送</th>
+		<tr>
+			<td><strong>标题</strong></td>
+			<td><strong>收件人</strong></td>
+			<td><strong>发送时间</strong></td>
+			<td><strong>操作</strong></td>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				<td>我在大连</td>
+				<td>王丽</td>
+				<td>2008.08.08</td>
+				<td>已读</a></td>
+				<td><a href="{:U('Message/msg_delete',array('id'=>$data['msg_id']))}">删除</a></td>
+			</tr>
+		</volist>
+		</form>
+	</table>
+	</div>
+
+</body>
+</html>

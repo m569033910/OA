@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/jquery.form.js'></script>
+	<script type='text/javascript' src='../js/jquery.validate.js'></script>
+	<script type='text/javascript' src='../js/select_meeting.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link rel='stylesheet' href='../css/select_meeting.css' type='text/css'/>
+	<script>
+		var ajax_url="{:U('Meeting/add_meeting')}";
+		var public='..';
+	</script>
+</head>
+<body>
+
+<div id='modi_meeting_div'>
+	<table>
+		<form method='post' id='modi_meeting' action="{:U('Meeting/meeting_update')}">
+		
+			<tr>
+				<td><strong>会议开始时间</strong></td>
+				<td><input type="text" name='me_start_time' value="{$data.me_start_time}"></td>
+			</tr>
+			<tr>
+				<td><strong>会议结束时间</strong></td>
+				<td><input type="text" name='me_stop_time' value="{$data.me_stop_time}"></td>
+			</tr>
+			<tr>
+				<td><strong>会议编号</strong></td>
+				<td><input type="text" name='me_num' value="{$data.me_num}"></td>
+			</tr>
+			<tr>
+				<td><strong>会议名称</strong></td>
+				<td><input type="text" name='me_name' value="{$data.me_name}"></td>
+			</tr>
+			<tr>
+				<td><strong>会议地点</strong></td>
+				<td><input type="text" name='me_address' value="{$data.me_address}"></td>
+			</tr>
+			<tr>
+				<td><strong>会议参议人员</strong></td>
+				<td><input type="text" name='me_part_id' value="{$data.me_part_id}"></td>
+			</tr>
+		
+		</form>
+	<tr ><td colspan='2'><button id='modi_button'>提交</button></td></tr>
+	</table>
+	</div>
+{$show}
+
+</body>
+</html>

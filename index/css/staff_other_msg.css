@@ -1,0 +1,40 @@
+table{
+	margin:50px auto;
+	border:1px solid #ccc;
+	border-collapse:collapse;
+}
+table tr{
+	border:1px solid #fff;
+	width:800px;
+	height:30px;
+}
+table tr td{
+	text-align:center;
+	margin:0;
+	padding:0;
+	border:1px solid #ccc;
+	width:100px;
+	height:30px;
+}
+table a{
+	text-decoration:none;
+}
+#select form{
+	width:800px;
+	margin:10px auto;
+}
+#select .ui-widget{
+	font-size:.5em;
+	margin-left:5px;
+}
+#page{
+	text-align:center;
+	width:150px;
+	margin:50px auto;
+}
+#loading{
+	background:url(../images/loading.gif)  no-repeat 20px center;
+	text-indent:40px;
+	line-height:25px;
+	font-weight:bold;
+}

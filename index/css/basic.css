@@ -1,0 +1,18 @@
+table{
+	margin:50px auto;
+	border:1px solid #ccc;
+	width:800px;
+	text-align:center;
+}
+table tr{
+	width:800px;
+	height:35px;
+}
+table tr td{
+	text-align:center;
+	margin:0;
+	padding:0;
+	border:1px solid #ccc;
+	width:100px;
+	height:30px;
+}

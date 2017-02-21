@@ -1,0 +1,37 @@
+table{
+	width:1100px;
+	height:370px;
+	margin:50px auto;
+	padding:0;
+	border:1px solid #ccc;
+	border-collapse:collapse;
+}
+table tr{
+	border:1px solid #fff;
+	width:800px;
+	height:30px;
+}
+table tr td{
+	text-align:center;
+	margin:0;
+	padding:0;
+	border:1px solid #ccc;
+	width:100px;
+	height:30px;
+}
+table a{
+	text-decoration:none;
+}
+#select form{
+	width:800px;
+	margin:10px auto;
+}
+#select .ui-widget{
+	font-size:.5em;
+	margin-left:5px;
+}
+#page{
+	text-align:center;
+	width:150px;
+	margin:50px auto;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<script type='text/javascript' src='__PUBLIC__/js/jquery.js'></script>
+	<script type='text/javascript' src='__PUBLIC__/js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='__PUBLIC__/js/select_address.js'></script>
+	<link type='text/css' rel='stylesheet' href='__PUBLIC__/js/jquery-ui/jquery-ui.css'/>
+	<link type='text/css' href='__PUBLIC__/css/staff_other_msg.css' rel='stylesheet'/>
+</head>
+<body>
+	<div id='select'>
+		<form id='select_form' method='post' action="{:U('Staff/staff_other_msg')}">
+			查询条件:<input type="radio" id="radio1" name="radio" value='staff_num'><label for="radio1">员工号</label><input type="radio" id="radio2" name="radio" value='staff_name'><label for="radio2">姓名</label>
+
+			具体查询条件：<input type="text" name='condion'><button id='select_button'>查询</button>
+
+		</form>
+	</div>
+
+	<table>
+	<th colspan='11'>员工信息</th>	
+	<volist name='data' id='info'>
+	<tr>
+	<td><strong>员工编号</strong></td>	
+	<td><strong>员工名称</strong></td>	
+	<td><strong>员工性别</strong></td>	
+	<td><strong>员工年龄</strong></td>	
+	<td><strong>员工所属部门</strong></td>	
+	<td><strong>员工职位</strong></td>	
+	<td><strong>员工邮箱</strong></td>	
+	<td><strong>员工办公电话</strong></td>	
+	<td><strong>员工移动电话</strong></td>	
+	<td><strong>员工住址</strong></td>	
+	<td><strong>操作</strong></td>	
+	</tr>
+	<tr>
+	<td>{$info.staff_num}</td>
+	<td>{$info.staff_name}</td>
+	<td>{$info.staff_sex}</td>
+	<td>{$info.staff_age}</td>
+	<td>{$info.staff_be_dept}</td>
+	<td>{$info.staff_position}</td>
+	<td>{$info.staff_email}</td>
+	<td>{$info.staff_work_phone}</td>
+	<td>{$info.staff_mo_phone}</td>
+	<td>{$info.staff_address}</td>
+	<td><a href="{:U('Staff/staff_other_msg_details',array('id'=>$info['staff_id']))}">详情</a></td>
+	</tr>
+	</volist>
+	</table>
+
+	{$show}
+</body>
+</html>

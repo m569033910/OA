@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/select_msg_details.js'></script>
+	<script>
+		var back_url="{:U('Message/select_msg')}";
+	</script>
+<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+<link rel="stylesheet" href="../css/basic.css" type='text/css'>
+<body>
+	<table>
+		<tr>
+			<td>发件人</td>
+			<td>{$data.msg_send_id}</td>
+		</tr>
+		<tr>
+			<td>收件人</td>
+			<td>{$data.msg_revice_id}</td>
+		</tr>
+		<tr>
+			<td>内容</td>
+			<td>{$data.msg_content}</td>
+		</tr>
+		<tr>
+			<td colspan='2'><button id='back'>返回</button></td>
+		</tr>
+	</table>
+</body>
+</html>

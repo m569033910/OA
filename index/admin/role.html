@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link type='text/css' href='../css/staff_other_msg.css' rel='stylesheet'/>
+</head>
+<body>
+	<div id='select'>
+		<form id='select_form' method='post' action="{:U('Admin/role')}">
+			查询条件:<input type="radio" id="radio1" name="radio" value='staff_num'><label for="radio1">员工号</label><input type="radio" id="radio2" name="radio" value='staff_name'><label for="radio2">姓名</label>
+
+			具体查询条件：<input type="text" name='condion'><button id='select_button'>查询</button>
+
+		</form>
+	</div>
+
+	<table>
+	<th colspan='11'>员工信息</th>	
+	<volist name='data' id='info'>
+	<tr>
+	<td><strong>员工编号</strong></td>	
+	<td><strong>员工姓名</strong></td>	
+	<td><strong>员工性别</strong></td>	
+	<td><strong>员工年龄</strong></td>	
+	<td><strong>员工所属部门</strong></td>	
+	<td><strong>员工职位</strong></td>	
+	<td><strong>员工邮箱</strong></td>	
+	<td><strong>员工办公电话</strong></td>	
+	<td><strong>员工移动电话</strong></td>	
+	<td><strong>员工住址</strong></td>	
+	<td><strong>操作</strong></td>	
+	</tr>
+	<tr>
+	<td>00010</td>
+	<td>张三</td>
+	<td>男</td>
+	<td>28</td>
+	<td>人事部</td>
+	<td>经理</td>
+	<td>133445515</td>
+	<td>1111245</td>
+	<td>4578962</td>
+	<td>大连</td>
+	<td><a href="{:U('Admin/modi_role',array('id'=>$info['staff_id']))}">设置</a></td>
+	</tr>
+	<tr>
+	<td>00011</td>
+	<td>王五</td>
+	<td>男</td>
+	<td>33</td>
+	<td>销售部</td>
+	<td>经理</td>
+	<td>13355</td>
+	<td>11454685</td>
+	<td>1234899</td>
+	<td>北京</td>
+	<td><a href="{:U('Admin/modi_role',array('id'=>$info['staff_id']))}">设置</a></td>
+	</tr>
+	<tr>
+	<td>00020</td>
+	<td>王丽</td>
+	<td>女</td>
+	<td>26</td>
+	<td>财务部</td>
+	<td>副经理</td>
+	<td>1334589</td>
+	<td>111124212454</td>
+	<td>45131268</td>
+	<td>上海</td>
+	<td><a href="{:U('Admin/modi_role',array('id'=>$info['staff_id']))}">设置</a></td>
+	</tr>
+	</volist>
+	</table>
+
+</body>
+</html>

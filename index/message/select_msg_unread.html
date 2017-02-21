@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link  rel='stylesheet' type='text/css' href='../css/select_msg.css'/>
+<body>
+<div id='select_message_div'>
+	<table>
+		<form id='select_message'>
+		<th colspan='5'>未读件箱</th>
+		<tr>
+			<td><strong>标题</strong></td>
+			<td><strong>留言人</strong></td>
+			<td><strong>接收时间</strong></td>
+			<td><strong>状态</strong></td>
+			<td><strong>操作</strong></td>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				 <td>聚会</td>
+				<td>张三</td>
+				<td>2016.07.10</td>
+				<td>未读</a></td>
+				<td><a href="{:U('Message/msg_delete',array('id'=>$data['msg_id']))}">删除</a></td>
+				
+			</tr>
+		</volist>
+		</form>
+	</table>
+	</div>
+
+	
+</body>
+</html>

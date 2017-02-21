@@ -1,0 +1,15 @@
+#staff_self_msg{
+	width:50%;
+	height:300px;
+	margin:15px auto;
+	border:2px solid #ccc;
+}
+#staff_self_msg #button{
+	text-align:center;
+}
+#loading{
+	background:url(../images/loading.gif)  no-repeat 20px center;
+	text-indent:40px;
+	line-height:25px;
+	font-weight:bold;
+}

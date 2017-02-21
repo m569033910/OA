@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	
+	<link type='text/css' href='../css/staff_other_msg.css' rel='stylesheet'/>
+	
+</head>
+<body>
+	<div id='select'>
+		<form id='select_form' method='post' action="{:U('Admin/role')}">
+			查询条件:<input type="radio" id="radio1" name="radio" value='staff_num'><label for="radio1">员工号</label><input type="radio" id="radio2" name="radio" value='staff_name'><label for="radio2">姓名</label>
+
+			具体查询条件：<input type="text" name='condion'><button id='select_button'>查询</button>
+			<input type="button" value='新建员工' id='create_staff'>
+		</form>
+
+	</div>
+
+	<table>
+	<th colspan='11'>员工信息</th>	
+	<volist name='data' id='info'>
+	<tr>
+	<td><strong>员工编号</strong></td>	
+	<td><strong>员工名称</strong></td>	
+	<td><strong>员工性别</strong></td>	
+	<td><strong>员工年龄</strong></td>	
+	<td><strong>员工所属部门</strong></td>	
+	<td><strong>员工职位</strong></td>	
+	<td><strong>员工邮箱</strong></td>	
+	<td><strong>员工办公电话</strong></td>	
+	<td><strong>员工移动电话</strong></td>	
+	<td><strong>员工住址</strong></td>	
+	<td><strong>操作</strong></td>	
+	</tr>
+	<tr>
+	<td>00011</td>
+	<td>王五</td>
+	<td>男</td>
+	<td>33</td>
+	<td>销售部</td>
+	<td>经理</td>
+	<td>13355</td>
+	<td>11454685</td>
+	<td>1234899</td>
+	<td>北京</td>
+	<td><a href="{:U('Admin/modi_role',array('id'=>$info['staff_id']))}">设置</a></td>
+	</tr>
+	</volist>
+	</table>
+
+	
+
+	
+	<div id='reg'>
+	<form action='#' method='post' id='tform'>
+	<ol class='reg_error'></ol>
+		<p>用&nbsp;&nbsp;户&nbsp;&nbsp;名: <input class='text' type="text" name="username" id="username" title='用户名不得少于两位！'><span class='star'></span></p>
+		<p>密　　码: <input type="password" class='text' name="password" id="password" title='密码不得少于六位！'><span class='star'></span></p>
+		<p>确认密码: <input type="password" class='text' name="enpassword" id="" title='密码必须与原密码一致！'><span class='star'></span></p>
+		 <p>邮　　箱: <input type="text" class='text' name="email" id="email" title='请输入正确的邮箱！'><span class='star'></span></p> 
+		<!--<p>邮　　编: <input type="text" class='text' name="postcode" id="postcode" ><span class='star'>*</span></p>-->
+		<p>性　　别: <input type="radio" id="radio3" name="radio3"><label for="radio3">男</label><input type="radio" id="radio4" name="radio3"><label for="radio4">女</label></p>
+		<p>爱　　好: <input type='checkbox' name='color' id='box1'><label for='box1'>红</label><input type='checkbox' name='color' id='box2'><label for='box2'>黄</label><input type='checkbox' name='color' id='box3'><label for='box3'>蓝</label><input type='checkbox' name='color' id='box4'><label for='box4'>绿</label></p>
+		<p>生　　日: <input type="text" class='text' name="birthday" id="birthday" readyonly='readyonly'></p>
+		<p>年　　龄: <input type="text" class='text' name="age"></p>
+	</form>
+	</div>
+
+	<div id='loading'>
+	
+	<input type="button" class="text" value="提交">
+	</div>
+</body>
+</html>

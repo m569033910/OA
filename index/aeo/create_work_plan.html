@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/jquery.form.js'></script>
+	<script type='text/javascript' src='../js/jquery.validate.js'></script>
+	<script type='text/javascript' src='../js/create_work_plan.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link rel='stylesheet' href='../css/create_work_plan.css' type='text/css'/>
+	<script>
+		var ajax_url="{:U('Aeo/add_work_plan')}";
+		var public='..';
+	</script>
+</head>
+<body>
+
+<div id='select_work_plan_div'>
+	<table>
+		<form id='select_work_plan'>
+		<th colspan='4'>工作计划</th>
+		<tr>
+			<td><strong>活动编号</strong></td>
+			<td><strong>活动名称</strong></td>
+			<td><strong>活动人</strong></td>
+			<td><strong>是否完成</strong></td>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				<td>145121</td>
+				<td>聚会</td>
+				<td>大力水手</td>
+				<td></td>
+			</tr>
+		</volist>
+		</form>
+	<tr id='button'><td colspan='4'><button>新建工作计划</button></td></tr>
+	</table>
+	</div>
+
+
+
+<div id='create_work_plan_div'>
+	<table>
+		<form id='create_work_plan'>
+		<th colspan='2'>添加工作计划</th>
+		<tr>
+			<td>活动编号：</td>
+			<td><input type="text" name="aeo_num"></td>
+		</tr>
+		<tr>
+			<td>活动名称：</td>
+			<td><input type="text" name="aeo_name"></td>
+		</tr>
+		<tr>
+			<td>活动开始时间：</td>
+			<td><input type="text" name="aeo_start_time" id='aeo_start_time'></td>
+		</tr>
+		<tr>
+			<td>活动结束时间：</td>
+			<td><input type="text" name="aeo_stop_time" id='aeo_stop_time'></td>
+		</tr>
+		<tr>
+			<td>活动人：</td>
+			<td><input type="text" name="aeo_ac_name"></td>
+		</tr>
+		<tr>
+			<td>活动内容：</td>
+			<td><input type="text" name="aeo_ac_content"></td>
+		</tr>
+		</form>
+	</table>
+	</div>
+	<div id='loading'>
+	注册中....
+</div>
+</body>
+</html>

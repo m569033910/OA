@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link type='text/css' rel='stylesheet' href='__PUBLIC__/css/staff_other_msg_details.css'/>
+	<script type='text/javascript' src='__PUBLIC__/js/jquery.js'></script>
+	<script>
+	$(function(){
+		$('input').attr('readonly','true');
+	});
+	</script>	
+</head>
+<body>
+	<table id='staff_self_msg' >
+	<th colspan='2'>个人信息查询——本人信息</th>
+	<tr><td>员工编号:<input type="text" name="staff_num" value='{$data.staff_num}' ></td></tr>
+	<tr><td>员工姓名:<input type="text" name="staff_name" value='{$data.staff_name}'></td></tr>
+	<tr><td>员工性别:<input type="text" name="staff_sex" value='{$data.staff_sex}'></td>
+	<td>员工年龄:<input type="text" name="staff_age" value='{$data.staff_age}'></td></tr>
+	<tr><td>员工职位:<input type="text" name="staff_position" value='{$data.staff_position}'></td>
+	<td>员工住址:<input type="text" name="staff_address" value='{$data.staff_address}'></td></tr>
+	<tr><td>移动电话:<input type="text" name="staff_mo_phone" value='{$data.staff_mo_phone}'></td>
+	<td>办公电话:<input type="text" name="staff_work_phone" value='{$data.staff_work_phone}'></td></tr>
+	<tr><td>邮箱:<input type="text" name="staff_email" value='{$data.staff_email}'></td>
+	<td>所属部门:<input type="text" name="staff_be_dept" value='{$data.staff_be_dept}'></td></tr>
+	<tr><td>角色:<input type="text" name="staff_role" value='{$data.staff_role}'></td>
+	<td>自我介绍:<input type="text" name="staff_self_intr" value='{$data.staff_self_intr}'>
+	</td></tr>
+	<tr><td>员工爱好:<input type="text" name="staff_hobbies" value='{$data.staff_hobbies}'>
+	</td></tr>
+	</table>
+</body>
+</html>

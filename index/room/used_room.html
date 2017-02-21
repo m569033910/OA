@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/jquery.form.js'></script>
+	<script type='text/javascript' src='../js/jquery.validate.js'></script>
+	<script type='text/javascript' src='../js/used_room.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link rel='stylesheet' href='../css/select_room.css' type='text/css'/>
+	<script>
+		var ajax_url="{:U('Room/if_use')}";
+		var public='..';
+	</script>
+</head>
+<body>
+
+<div id='room_div'>
+	<table>
+		<form id='room_form'>
+		<th colspan='7'>会议室预约</th>
+		<tr>
+			<td><strong>会议室编号</strong></td>
+			<td><strong>会议室名称</strong></td>
+			<td><strong>会议室地点</strong></td>
+			<td><strong>容纳人数</strong></td>
+			<td><strong>空调</strong></td>
+			<td><strong>投影仪</strong></td>
+			<td><strong>操作</strong></td>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				<td>{$data.ro_num}</td>
+				<td>{$data.ro_name}</td>
+				<td>{$data.ro_address}</td>
+				<td>{$data.ro_have_num}</td>
+				<td>{$data.ro_airc}</td>
+				<td>{$data.ro_ohc}</td>
+				<td><input type="button" value='取消'></td>
+				
+				</if>
+			</tr>
+		</volist>
+		</form>
+	</table>
+	</div>
+{$show}
+
+	<div id='loading'>
+	预约中....
+</div>
+</body>
+</html>

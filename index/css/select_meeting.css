@@ -1,0 +1,44 @@
+table{
+	margin:50px auto;
+	border:1px solid #ccc;
+	width:800px;
+	text-align:center;
+}
+table tr{
+	width:800px;
+	height:35px;
+}
+
+
+table tr td{
+	text-align:center;
+	margin:0;
+	padding:0;
+	border:1px solid #ccc;
+	width:100px;
+	height:30px;
+}
+table  tr td a{
+	text-decoration:none;
+	}
+table tr td input{
+	width:200px;
+	height:25px;
+	float:left;
+	margin:0 0 0 5px;
+	border:1px dashed #ccc;
+}
+table #button{
+	height:40px;
+}
+#loading{
+	background:url(../images/loading.gif)  no-repeat 20px center;
+	text-indent:40px;
+	line-height:25px;
+	font-weight:bold;
+}
+#page{
+	text-align:center;
+	width:150px;
+	margin:50px auto;
+}

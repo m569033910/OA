@@ -1,0 +1,22 @@
+$(function(){
+	$('.content').hide();
+	$('#div1').click(function(){
+		$('#staff_msg').slideToggle();
+	});
+	$('#div2').click(function(){
+		$('#work').slideToggle();
+	});
+	$('#div3').click(function(){
+		$('#card').slideToggle();
+	});
+	$('#div4').click(function(){
+		$('#online_msg').slideToggle();
+	});
+	$('#div5').click(function(){
+		$('#phone_list').slideToggle();
+	});
+	$('#div6').click(function(){
+		$('#meeting').slideToggle();
+	});
+});
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/jquery.form.js'></script>
+	<script type='text/javascript' src='../js/jquery.validate.js'></script>
+	<script type='text/javascript' src='../js/select_room.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link rel='stylesheet' href='../css/select_room.css' type='text/css'/>
+	<script>
+		var ajax_url="{:U('Room/add_room')}";
+		var public='..';
+	</script>
+</head>
+<body>
+
+<div id='room_div'>
+	<table>
+		<form id='room_form'>
+		<th colspan='7'>会议室管理</th>
+		<tr>
+			<td><strong>会议室编号</strong></td>
+			<td><strong>会议室名称</strong></td>
+			<td><strong>会议室地点</strong></td>
+			<td><strong>容纳人数</strong></td>
+			<td><strong>空调</strong></td>
+			<td><strong>投影仪</strong></td>
+			<td><strong>操作</strong></td>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				<td>12345</td>
+				<td>商讨会议室</td>
+				<td>106</td>
+				<td>30</td>
+				<td>有</td>
+				<td>有</td>
+				<td><a href="{:U('Room/modi_room',array('id'=>$data['ro_id']))}">修改 |  </a>
+				<a href="{:U('Room/delete_room',array('id'=>$data['ro_id']))}">删除</a></td>
+				
+				</if>
+			</tr>
+		</volist>
+		</form>
+	<tr ><td colspan='7'><button id='button'>新建会议室</button></td></tr>
+	</table>
+	</div>
+
+
+
+
+<div id='create_room_div'>
+	<table>
+		<form id='create_room'>
+		<th colspan='2'>新建会议室</th>
+		<tr>
+			<td>会议室编号：</td>
+			<td><input type="text" name="ro_num"></td>
+		</tr>
+		<tr>
+			<td>会议室地点：</td>
+			<td><input type="text" name="ro_address"></td>
+		</tr>
+		<tr>
+			<td>会议室名称：</td>
+			<td><input type="text" name="ro_name"></td>
+		</tr>
+		<tr>
+			<td>最大容纳数：</td>
+			<td><input type="text" name="ro_have_num"></td>
+		</tr>
+		<tr>
+			<td>空调：</td>
+			<td><input type="radio" id="radio1" name="ro_airc" value='有'><label for="radio1">有</label><input type="radio" id="radio2" name="ro_airc" value='无'><label for="radio2">无</label></td>
+		</tr>
+		<tr>
+			<td>投影仪：</td>
+			<td><input type="radio" id="radio1" name="ro_ohc" value='有'><label for="radio1">有</label><input type="radio" id="radio2" name="ro_ohc" value='无'><label for="radio2">无</label></td>
+		</tr>
+		</form>
+	</table>
+	</div>
+	<div id='loading'>
+	新建中....
+</div>
+</body>
+</html>

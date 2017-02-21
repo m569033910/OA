@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/jquery.form.js'></script>
+	<script type='text/javascript' src='../js/jquery.validate.js'></script>
+	<script type='text/javascript' src='../js/modi_room.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link rel='stylesheet' href='../css/select_meeting.css' type='text/css'/>
+	<script>
+		var ajax_url="{:U('Meeting/add_meeting')}";
+		var public='..';
+	</script>
+</head>
+<body>
+
+<div id='modi_room_div'>
+	<table>
+		<form method='post' id='modi_room' action="{:U('Room/update_room')}">
+		<th colspan='2'>会议室管理</th>
+		<tr>
+			<td><strong>编号</strong></td>
+			<td><input type="text" name='ro_num' value='{$data.ro_num}'></td>
+		</tr>
+		<tr>
+			<td><strong>名称</strong></td>
+			<td><input type="text" name='ro_name' value='{$data.ro_name}'></td>
+		</tr>
+		<tr>
+			<td><strong>地点</strong></td>
+			<td><input type="text" name='ro_address' value='{$data.ro_address}'></td>
+		</tr>
+		<tr>
+			<td><strong>最大容纳数</strong></td>
+			<td><input type="text" name='ro_have_num' value='{$data.ro_have_num}'></td>
+		</tr>
+		<tr>
+			<td><strong>空调</strong></td>
+			<td><input type="text" name='ro_airc' value='{$data.ro_airc}'></td>
+		</tr>
+		<tr>
+			<td><strong>投影仪</strong></td>
+			<td><input type="text" name='ro_ohc' value='{$data.ro_ohc}'></td>
+		</tr>
+
+		</form>
+	<tr ><td colspan='2'><button id='modi_button'>提交</button></td></tr>
+	</table>
+	</div>
+{$show}
+
+</body>
+</html>

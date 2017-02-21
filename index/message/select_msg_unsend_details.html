@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	
+	<script>
+		var back_url="{:U('Message/select_msg_unsend')}";
+	</script>
+<link rel="stylesheet" href="../css/basic.css" type='text/css'>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+<script>
+	$(function(){
+	$('#back').button();
+	$('#back').click(function(){
+		
+		window.location=back_url;
+		});
+	});
+	</script>
+<body>
+<div id='select_message_div'>
+	<table>
+		<form id='select_message'>
+		<th colspan='5'>稿件信息</th>
+		<tr>
+			<td><strong>发件人</strong></td>
+			<td><strong>{$data.staff_name}</strong></td>
+		</tr>
+		<tr>
+			<td><strong>收件人</strong></td>
+			<td><strong>{$data.msg_revice_id}</strong></td>
+		</tr>
+		<tr>
+			<td><strong>标题</strong></td>
+			<td><strong>{$data.msg_title}</strong></td>
+		</tr>
+		<tr>
+			<td><strong>内容</strong></td>
+			<td><strong>{$data.msg_content}</strong></td>
+		</tr>
+		<tr>
+		<td colspan='2'><button id='back'>返回</button>
+		</td></tr>
+		</form>
+	</table>
+	</div>
+	
+</body>
+</html>

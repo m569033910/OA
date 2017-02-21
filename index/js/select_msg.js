@@ -1,0 +1,101 @@
+$(function(){
+			//alert(ajax_url);
+	$('#create_msg_button').button();
+	$('#create_msg_button').click(function(){
+		$('#create_msg_div').dialog('open');
+	});
+	$('#create_msg_div').dialog({
+		autoOpen:false,
+		width:500,
+		height:330,
+		title:'新建信息',
+		show:true,
+		hide:true,
+		draggable:false,
+		resizable:false,
+		modal:true,
+		closeText:'关闭',
+		buttons:{
+			'发送':function(){$('#create_msg_form').submit();},
+			'重写':function(){$('#create_msg_form').resetForm();},
+			'存草稿':function(){
+				//alert('a');
+				$.post(ajax_url2, $("#create_msg_form").serialize());
+				setTimeout(function(){
+					$('#create_msg_div').dialog('close');
+				},1000);
+			},
+			'取消':function(){$('#create_msg_div').dialog('close');}
+		},
+
+	});
+	$('#loading').dialog({
+		autoOpen:false,
+		width:160,
+		height:60,
+		modal:true,
+		closeOnEscape:false,
+		draggable:false,
+		resizable:false,
+	}).parent().find('.ui-widget-header').hide();
+	$('#create_msg_form').validate({
+		rules:{
+			msg_revice_num:{
+				required:true,
+				remote:{
+					url:ajax_url1,
+					type:'POST',
+				},
+			},
+			msg_revice_name:{
+				required:true,
+			},
+			msg_title:{
+				required:true,
+			},
+			msg_content:{
+				required:true,
+			}
+		},
+		messages:{
+			msg_revice_num:{
+				required:'工号不能为空！',
+				remote:'此工号不存在！',
+			},
+			msg_revice_name:{
+				required:'姓名不能为空！',
+			},
+			msg_title:{
+				required:'标题不能为空！',
+			},
+			msg_content:{
+				required:'内容不能为空！',
+			}
+		},
+		submitHandler : function (form) {
+			$(form).ajaxSubmit({
+				url:ajax_url,
+				type:'POST',
+				beforeSubmit:function(){
+							//alert(ajax_url);
+					$('#create_msg_div').dialog('widget').find('button').eq(1).button('disable');
+					$('#loading').dialog('open').html('发送中...');
+				},
+				success:function(responseText,statusText){
+					if(responseText){
+						$('#create_msg_div').dialog('widget').find('button').eq(1).button('enable');		
+						$('#loading').css('background','url('+public+'/images/success.gif) no-repeat 20px center').html('发送成功...');
+						setTimeout(function(){
+						$('#loading').dialog('close');
+						$('#create_msg_div').dialog('close');
+						$('#create_msg_form').resetForm();
+						$('#create_msg_div span.star').removeClass('ok').html('*');
+						$('#loading').css('background','url('+public+'/images/loading.gif) no-repeat 20px center').html('发送中...');
+						},1000);
+					}
+				},
+			});
+		},
+		
+	});
+});		

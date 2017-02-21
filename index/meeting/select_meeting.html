@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/jquery-ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='../js/jquery.form.js'></script>
+	<script type='text/javascript' src='../js/jquery.validate.js'></script>
+	<script type='text/javascript' src='../js/select_meeting.js'></script>
+	<link type='text/css' rel='stylesheet' href='../js/jquery-ui/jquery-ui.css'/>
+	<link rel='stylesheet' href='../css/select_meeting.css' type='text/css'/>
+	<script>
+		var ajax_url="{:U('Meeting/add_meeting')}";
+		var public='..';
+	</script>
+</head>
+<body>
+
+<div id='select_work_plan_div'>
+	<table>
+		<form id='select_work_plan'>
+		<th colspan='5'>会议管理</th>
+		<tr>
+			<td><strong>会议编号</strong></td>
+			<td><strong>会议名称</strong></td>
+			<td><strong>会议地点</strong></td>
+			<td><strong>会议时间</strong></td>
+			<td><strong>会议信息</strong></td>
+			<if condition='($role eq 1)'>
+			<td><strong>操作</strong></td>
+			</if>
+		</tr>
+		<volist name='data' id='data'>
+			<tr>
+				<td>12345</td>
+				<td>哈哈</td>
+				<td>103</td>
+				<td>2016.07.09</td>
+				<td><a href="{:U('Meeting/meeting_details',array('id'=>$data['me_id']))}">查看</a></td>
+				<if condition='($role eq 1)'>
+				<td><a href="{:U('Meeting/delete_meeting',array('id'=>$data['me_id']))}">删除 | </a><a href="{:U('Meeting/modi_meeting',array('id'=>$data['me_id']))}">修改</a></td>
+				</if>
+			</tr>
+		</volist>
+		</form>
+	<tr ><td colspan='6'><button id='button'>新建会议</button></td></tr>
+	</table>
+	</div>
+
+
+
+<div id='create_work_plan_div'>
+	<table>
+		<form id='create_work_plan'>
+		<th colspan='2'>新建会议</th>
+		<tr>
+			<td>会议编号：</td>
+			<td><input type="text" name="me_num"></td>
+		</tr>
+		<tr>
+			<td>会议名称：</td>
+			<td><input type="text" name="me_name"></td>
+		</tr>
+		<tr>
+			<td>会议开始时间：</td>
+			<td><input type="text" name="me_start_time" id='me_start_time'></td>
+		</tr>
+		<tr>
+			<td>会议结束时间：</td>
+			<td><input type="text" name="me_stop_time" id='me_stop_time'></td>
+		</tr>
+		<tr>
+			<td>会议地点：</td>
+			<td><input type="text" name="me_address"></td>
+		</tr>
+		<tr>
+			<td>会议参与人：</td>
+			<td><input type="text" name="me_part_id"></td>
+		</tr>
+		</form>
+	</table>
+	</div>
+	<div id='loading'>
+	注册中....
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type='text/javascript' src='../js/jquery.js'></script>
+	<script type='text/javascript' src='../js/download.js'></script>
+	<script>
+	var public='..';
+	</script>
+	<link rel="stylesheet" href="../css/self_file.css">
+</head>
+<body>
+	<table>
+		<tr>
+		<td colspan='2' id='name'><strong> 个人文件夹</strong></td></tr>
+		<tr>
+			<td>文件名</td>
+			<td>操作</td>
+		</tr>
+		<volist name='data' id='data'> 
+				<tr>
+				<td>a.zip</td>
+				<td><a href="">下载</a> | <a class='all' href="{:U('File/change_all',array('name'=>$data))}">共享</a></td>
+				</tr>
+				<tr>
+				<td>vc.zip</td>
+				<td><a href="">下载</a> | <a class='all' href="{:U('File/change_all',array('name'=>$data))}">共享</a></td>
+				</tr>
+		
+		</volist>
+		<tr>
+			<td colspan='2'>
+				<form action="{:U('File/upload_file')}" enctype="multipart/form-data" method="post" >
+	<input type="file" name="photo" />
+	<input type="submit" value="提交" >
+	</form>
+			</td>
+		</tr>
+
+	</table>
+	
+</body>
+</html>

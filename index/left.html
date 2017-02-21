@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src='./js/jquery.js'></script>
+<script src='./js/left.js'></script>
+<link type='text/css' rel='stylesheet' href='./css/left.css' />
+<body>
+<div id='div'>
+	<ul>
+		<if condition='($role eq 2)'>
+
+		<li class='title' id='div1'>系统管理</li>
+		<div id='staff_msg' class='content'>
+		<li><a href="./admin/dept.html" target='right'>部门管理</a></li>
+		<li><a href="./admin/role.html" target='right'>角色管理</a></li>
+		<li><a href="./admin/staff.html" target='right'>职员管理</a></li>
+		</div>
+
+		<elseif condition='($role eq 1) or ($role eq 0)'/>
+
+		<li class='title' id='div1'>个人信息</li>
+		<div id='staff_msg' class='content'>
+		<li><a href="./staff/staff_self_msg.html" target='right'>本人信息</a></li>
+		<li><a href="./staff/staff_other_msg.html" target='right'>他人信息</a></li>
+		</div>
+		<li class='title' id='div2'>工作安排</li>
+		<div id='work' class='content'>
+		<li><a href="./aeo/create_work_plan.html" target='right'>日程安排</a></li>
+		<li><a href="text1" target='right'>日历安排</a></li>
+		</div>
+		<li class='title' id='div3'>文件夹</li>
+		<div id='card' class='content'>
+		<li><a href="./file/self_file.html" target='right'>个人文件夹</a></li>
+		<li><a href="./file/all.html" target='right'>共享文件夹</a></li>
+		</div>
+		<li class='title' id='div4'>在线信息</li>
+		<div id='online_msg' class='content'>
+		<li><a href="./message/select_msg.html" target='right'>我的收件箱</a></li>
+		<li><a href="./message/select_msg_unread.html" target='right'>未读留言</a></li>
+		<li><a href="./message/select_msg_send.html" target='right'>已发送</a></li>
+		<li><a href="./message/select_msg_unsend.html" target='right'>草稿箱</a></li>
+		</div>
+		<li class='title' id='div5'>公司通讯录</li>
+		<div id='phone_list' class='content'>
+		<li><a href="./address/select_address.html" target='right'>公司通讯录</a></li>
+		</div>
+		<li class='title' id='div6'>会议管理</li>
+		<div id='meeting' class='content'>
+
+
+		<if condition='($role eq 0)'>
+		<li><a href="./meeting/select_meeting.html" target='right'>会议管理</a></li>
+		<elseif condition='($role eq 1)'/>
+		<li><a href="./meeting/select_meeting.html" target='right'>会议管理</a></li>
+		<li><a href="./room/select_room.html" target='right'>会议室管理</a></li>
+		<li><a href="./room/use_room.html" target='right'>会议室预约</a></li>
+		<li><a href="./room/used_room.html" target='right'>取消预约</a></li>
+		<else/>
+		</if>
+		</div>
+
+
+		<else/>
+		</if>
+	</ul>
+</div>
+</body>
+</html>
